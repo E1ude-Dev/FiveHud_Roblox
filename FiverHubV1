@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 function FiverHubScript(gameIdentify)
-    local MainWindow = Library.CreateWindow("Fiver Hub", "DarkTheme")
+    local MainWindow = Library.CreateLib("Fiver Hub", "DarkTheme")
 
     if gameIdentify == 10834586502 then
         local FarmTab = Library:CreateTab("Auto Farm")
