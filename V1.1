@@ -42,19 +42,8 @@ local AutoFarmTab = FiveHUDPrimary:CreateTab("Auto Farms", 0) -- Title, Image
 local MiscTab = FiveHUDPrimary:CreateTab("Misc", 0) -- Title, Image
 
 local C1Section = ChapterActTab:CreateSection("Chapter 1")
-local C2Section = ChapterActTab:CreateSection("Chapter 2")
-local C3Section = ChapterActTab:CreateSection("Chapter 3")
-local C4Section = ChapterActTab:CreateSection("Chapter 4")
 
-local DPSFarmSection = AutoFarmTab:CreateSection("DPS Farms")
-local SpecificBattlerFarmSection = AutoFarmTab:CreateSection("Specific Battler Farms")
-local BossLevelFarmsSection = AutoFarmTab:CreateSection("Boss Level Farms")
-
-local DifficultySection = MiscTab:CreateSection("Difficulty Switch")
-local GameSection = MiscTab:CreateSection("Game")
-
-
-local LevelsInC1 = C1Section:CreateDropdown({
+local LevelsInC1 = ChapterActTab:CreateDropdown({
    Name = "Play Level",
    Options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"},
    CurrentOption = {"1"},
@@ -76,3 +65,16 @@ local LevelsInC1 = C1Section:CreateDropdown({
        game:GetService("ReplicatedStorage"):WaitForChild("Events", 9e9):WaitForChild("RemoteFunction", 9e9):WaitForChild("StartBattle", 9e9):InvokeServer(unpack(args))
    end,
 })
+
+
+
+local C2Section = ChapterActTab:CreateSection("Chapter 2")
+local C3Section = ChapterActTab:CreateSection("Chapter 3")
+local C4Section = ChapterActTab:CreateSection("Chapter 4")
+
+local DPSFarmSection = AutoFarmTab:CreateSection("DPS Farms")
+local SpecificBattlerFarmSection = AutoFarmTab:CreateSection("Specific Battler Farms")
+local BossLevelFarmsSection = AutoFarmTab:CreateSection("Boss Level Farms")
+
+local DifficultySection = MiscTab:CreateSection("Difficulty Switch")
+local GameSection = MiscTab:CreateSection("Game")
