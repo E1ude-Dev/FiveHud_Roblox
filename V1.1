@@ -50,16 +50,23 @@ local LevelsInC1 = ChapterActTab:CreateDropdown({
    MultipleOptions = false,
    Flag = "C1Levels", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Chosen)
-        local chosenOption = tonumber(type(Chosen) == "table" and Chosen[1] or Chosen)
+        local value = (type(Chosen) == "table" and Chosen[1]) or Chosen
+        local chosenOption = tonumber(value)
+
+        if not chosenOption then
+            warn("[Dropdown Error] Invalid chosen option:", Chosen)
+            return
+        end
+
         local args = {
-            [1] = "Chapter1";
-            [2] = chosenOption;
-            [3] = 1;
-            [4] = 1;
-            [5] = false;
-            [6] = {};
-            [7] = false;
-            [8] = 1;
+            [1] = "Chapter1",
+            [2] = chosenOption,
+            [3] = 1,
+            [4] = 1,
+            [5] = false,
+            [6] = {},
+            [7] = false,
+            [8] = 1,
         }
 
        game:GetService("ReplicatedStorage"):WaitForChild("Events", 9e9):WaitForChild("RemoteFunction", 9e9):WaitForChild("StartBattle", 9e9):InvokeServer(unpack(args))
